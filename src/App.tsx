@@ -549,13 +549,18 @@ export default function App() {
           {/* Desktop links */}
           <div className="hidden lg:flex items-center gap-8">
             {(['services', 'about', 'howItWorks', 'gallery', 'contact'] as const).map((k) => (
-              <a
+              <button
                 key={k}
-                href={`#${k}`}
-                className="nav-link text-sm font-medium text-white/80 hover:text-white"
+                onClick={() => {
+                  const element = document.getElementById(k)
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' })
+                  }
+                }}
+                className="nav-link text-sm font-medium text-white/80 hover:text-white bg-transparent"
               >
                 {copy.nav[k]}
-              </a>
+              </button>
             ))}
           </div>
 
@@ -578,13 +583,18 @@ export default function App() {
               ))}
             </div>
 
-            <a
-              href="#contact"
+            <button
+              onClick={() => {
+                const element = document.getElementById('contact')
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' })
+                }
+              }}
               className="hidden sm:block cta-primary text-sm font-semibold px-5 py-2 rounded-lg text-white"
               style={{ background: 'linear-gradient(135deg,#1a5c38,#2d7a4f)' }}
             >
               {copy.nav.getQuote}
-            </a>
+            </button>
 
             {/* Mobile hamburger */}
             <button
@@ -608,24 +618,34 @@ export default function App() {
         >
           <button className="absolute top-5 right-6 text-white/70 text-2xl" onClick={() => setMobileOpen(false)}>✕</button>
           {(['services', 'about', 'howItWorks', 'gallery', 'contact'] as const).map((k) => (
-            <a
+            <button
               key={k}
-              href={`#${k}`}
-              onClick={() => setMobileOpen(false)}
-              className="text-2xl font-medium text-white/90 hover:text-white"
+              onClick={() => {
+                setMobileOpen(false)
+                const element = document.getElementById(k)
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' })
+                }
+              }}
+              className="text-left text-2xl font-medium text-white/90 hover:text-white"
               style={{ fontFamily: "'DM Serif Display', serif" }}
             >
               {copy.nav[k]}
-            </a>
+            </button>
           ))}
-          <a
-            href="#contact"
-            onClick={() => setMobileOpen(false)}
-            className="mt-4 cta-primary text-center font-semibold px-6 py-3 rounded-xl text-white"
+          <button
+            onClick={() => {
+              setMobileOpen(false)
+              const element = document.getElementById('contact')
+              if (element) {
+                element.scrollIntoView({ behavior: 'smooth' })
+              }
+            }}
+            className="mt-4 cta-primary w-full text-center font-semibold px-6 py-3 rounded-xl text-white"
             style={{ background: 'linear-gradient(135deg,#1a5c38,#2d7a4f)' }}
           >
             {copy.nav.getQuote}
-          </a>
+          </button>
         </div>
       </nav>
 
