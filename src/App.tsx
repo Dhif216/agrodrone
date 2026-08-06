@@ -1,5 +1,10 @@
 import { useState, useEffect, useRef } from 'react'
 import SectionHeading from './components/SectionHeading'
+import seedImg from './assets/images/seed.png'
+import furtImg from './assets/images/furt.png'
+import mapImg from './assets/images/map.png'
+import fleetImg from './assets/images/fleet.png'
+import logoImg from './assets/branding/logo-mark-64.png'
 
 type Lang = 'fi' | 'en'
 
@@ -343,12 +348,12 @@ const t = {
 }
 
 const serviceCardImages = [
-  withBase('/images/seed.png'),
-  withBase('/images/furt.png'),
+  seedImg,
+  furtImg,
   'https://images.pexels.com/photos/2252584/pexels-photo-2252584.jpeg?auto=compress&cs=tinysrgb&w=1200',
   'https://images.pexels.com/photos/1112080/pexels-photo-1112080.jpeg?auto=compress&cs=tinysrgb&w=1200',
   'https://images.pexels.com/photos/974314/pexels-photo-974314.jpeg?auto=compress&cs=tinysrgb&w=1200',
-  withBase('/images/map.png'),
+  mapImg,
   'https://images.pexels.com/photos/1595108/pexels-photo-1595108.jpeg?auto=compress&cs=tinysrgb&w=1200',
   'https://images.pexels.com/photos/2131784/pexels-photo-2131784.jpeg?auto=compress&cs=tinysrgb&w=1200',
   'https://images.pexels.com/photos/248880/pexels-photo-248880.jpeg?auto=compress&cs=tinysrgb&w=1200',
@@ -521,7 +526,7 @@ export default function App() {
           {/* Logo */}
           <a href="#" className="flex items-center gap-2.5">
             <img
-              src={withBase('/branding/logo-mark-64.png')}
+              src={logoImg}
               alt="AgriGrow Solutions logo"
               className="w-8 h-8 rounded-lg object-cover"
             />
@@ -908,7 +913,7 @@ export default function App() {
                 style={{ boxShadow: '0 20px 60px rgba(0,0,0,0.3)' }}
               >
                 <img
-                  src={withBase('/images/fleet.png')}
+                  src={fleetImg}
                   alt="Agricultural drone fleet in operation"
                   className="w-full h-64 object-cover"
                 />
@@ -1218,7 +1223,7 @@ export default function App() {
             <div className="lg:col-span-1">
               <div className="flex items-center gap-2.5 mb-4">
                 <img
-                  src={withBase('/branding/logo-mark-64.png')}
+                  src={logoImg}
                   alt="AgriGrow Solutions logo"
                   className="w-8 h-8 rounded-lg object-cover"
                 />
