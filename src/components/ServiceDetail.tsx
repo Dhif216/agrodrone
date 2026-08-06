@@ -426,7 +426,12 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ lang }) => {
               : 'Interested in this service? Contact us today!'}
           </p>
           <button
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => {
+              navigate('/')
+              setTimeout(() => {
+                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
+              }, 200)
+            }}
             className="px-8 py-4 rounded-lg font-semibold text-white text-lg transition-all hover:shadow-lg"
             style={{
               background: '#1a5c38',
