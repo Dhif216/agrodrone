@@ -1,0 +1,18 @@
+{
+  "title": "AgroDrone Finland | Bilingual Precision Agriculture Drone Services",
+  "description": "Bilingual drone services for Finnish agriculture, including seeding, spraying, NDVI mapping, field surveying, and crop monitoring.",
+  "language": "en",
+  "robots": {
+    "index": true
+  },
+  "openGraph": {
+    "image": "https://dhif216.github.io/agrodrone/images/fleet.png"
+  },
+  "customScripts": {
+    "headEnd": "<meta name=\"keywords\" content=\"drone services, precision agriculture, Finland, NDVI mapping, crop spraying, drone seeding\" />\n<meta name=\"author\" content=\"AgroDrone Finland Oy\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<meta name=\"twitter:title\" content=\"AgroDrone Finland | Bilingual Precision Agriculture Drone Services\" />\n<meta name=\"twitter:description\" content=\"Bilingual drone services for Finnish agriculture, including seeding, spraying, NDVI mapping, field surveying, and crop monitoring.\" />\n<meta property=\"og:type\" content=\"website\" />\n<meta property=\"og:locale\" content=\"en_FI\" />\n<meta property=\"og:locale:alternate\" content=\"fi_FI\" />\n<link rel=\"canonical\" href=\"https://dhif216.github.io/agrodrone/\" />\n<link rel=\"alternate\" hreflang=\"en\" href=\"https://dhif216.github.io/agrodrone/\" />\n<link rel=\"alternate\" hreflang=\"fi\" href=\"https://dhif216.github.io/agrodrone/\" />\n<link rel=\"alternate\" hreflang=\"x-default\" href=\"https://dhif216.github.io/agrodrone/\" />"
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

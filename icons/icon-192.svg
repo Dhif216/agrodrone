@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" role="img" aria-label="AgroDrone Android icon 192">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#123b2b" />
+      <stop offset="100%" stop-color="#4caf78" />
+    </linearGradient>
+  </defs>
+  <rect width="192" height="192" rx="42" fill="url(#g)" />
+  <path d="M58 70l38-22 38 22" stroke="#d8f7e4" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  <path d="M44 96h104" stroke="#d8f7e4" stroke-width="9" stroke-linecap="round" fill="none" />
+  <circle cx="64" cy="96" r="8" fill="#d8f7e4" />
+  <circle cx="128" cy="96" r="8" fill="#d8f7e4" />
+  <path d="M96 110v24" stroke="#d8f7e4" stroke-width="9" stroke-linecap="round" fill="none" />
+  <path d="M72 140c7.5-7 15.4-10.4 24-10.4 8.6 0 16.6 3.4 24 10.4" stroke="#f3e7b8" stroke-width="9" stroke-linecap="round" fill="none" />
+</svg>
