@@ -21,6 +21,8 @@ const DEFAULT_COOKIE_PREFS: CookiePrefs = {
   marketing: false,
 }
 
+const withBase = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\/+/, '')}`
+
 const t = {
   en: {
     nav: {
@@ -341,12 +343,12 @@ const t = {
 }
 
 const serviceCardImages = [
-  '/images/seed.png',
-  '/images/furt.png',
+  withBase('/images/seed.png'),
+  withBase('/images/furt.png'),
   'https://images.pexels.com/photos/2252584/pexels-photo-2252584.jpeg?auto=compress&cs=tinysrgb&w=1200',
   'https://images.pexels.com/photos/1112080/pexels-photo-1112080.jpeg?auto=compress&cs=tinysrgb&w=1200',
   'https://images.pexels.com/photos/974314/pexels-photo-974314.jpeg?auto=compress&cs=tinysrgb&w=1200',
-  '/images/map.png',
+  withBase('/images/map.png'),
   'https://images.pexels.com/photos/1595108/pexels-photo-1595108.jpeg?auto=compress&cs=tinysrgb&w=1200',
   'https://images.pexels.com/photos/2131784/pexels-photo-2131784.jpeg?auto=compress&cs=tinysrgb&w=1200',
   'https://images.pexels.com/photos/248880/pexels-photo-248880.jpeg?auto=compress&cs=tinysrgb&w=1200',
@@ -519,7 +521,7 @@ export default function App() {
           {/* Logo */}
           <a href="#" className="flex items-center gap-2.5">
             <img
-              src="/branding/logo-mark-64.png"
+              src={withBase('/branding/logo-mark-64.png')}
               alt="AgriGrow Solutions logo"
               className="w-8 h-8 rounded-lg object-cover"
             />
@@ -906,7 +908,7 @@ export default function App() {
                 style={{ boxShadow: '0 20px 60px rgba(0,0,0,0.3)' }}
               >
                 <img
-                  src="/images/fleet.png"
+                  src={withBase('/images/fleet.png')}
                   alt="Agricultural drone fleet in operation"
                   className="w-full h-64 object-cover"
                 />
@@ -1216,7 +1218,7 @@ export default function App() {
             <div className="lg:col-span-1">
               <div className="flex items-center gap-2.5 mb-4">
                 <img
-                  src="/branding/logo-mark-64.png"
+                  src={withBase('/branding/logo-mark-64.png')}
                   alt="AgriGrow Solutions logo"
                   className="w-8 h-8 rounded-lg object-cover"
                 />
@@ -1274,7 +1276,7 @@ export default function App() {
               <div className="space-y-2.5">
                 <a href="#" className="block text-sm text-white/50 hover:text-white transition-colors">{copy.footer.privacy}</a>
                 <a href="#" className="block text-sm text-white/50 hover:text-white transition-colors">{copy.footer.terms}</a>
-                <a href="/cookie-policy.html" className="block text-sm text-white/50 hover:text-white transition-colors">{copy.cookies.policy}</a>
+                <a href={withBase('/cookie-policy.html')} className="block text-sm text-white/50 hover:text-white transition-colors">{copy.cookies.policy}</a>
                 <button
                   type="button"
                   onClick={() => setShowCookiePanel(true)}
