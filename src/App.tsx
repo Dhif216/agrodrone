@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
+import { Routes, Route, useNavigate } from 'react-router-dom'
 import SectionHeading from './components/SectionHeading'
+import ServiceDetail from './components/ServiceDetail'
 import seedImg from './assets/images/seed.png'
 import furtImg from './assets/images/furt.png'
 import mapImg from './assets/images/map.png'
@@ -439,6 +441,7 @@ function RevealDiv({ children, className = '', delay = 0 }: { children: React.Re
 
 export default function App() {
   const [lang, setLang] = useState<Lang>('fi')
+  const navigate = useNavigate()
   const [mobileOpen, setMobileOpen] = useState(false)
   const [openFaq, setOpenFaq] = useState<number | null>(null)
   const [formSent, setFormSent] = useState(false)
@@ -447,6 +450,11 @@ export default function App() {
   const [cookieConsent, setCookieConsent] = useState<CookieConsentRecord | null>(null)
   const [showCookiePanel, setShowCookiePanel] = useState(false)
   const copy = t[lang]
+
+  const serviceIds = ['seeding', 'spraying', 'ndvi', 'surveying', 'monitoring']
+  const handleServiceClick = (index: number) => {
+    navigate(`/service/${serviceIds[index]}`)
+  }
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 60)
@@ -510,7 +518,7 @@ export default function App() {
 
   const toggleFaq = (i: number) => setOpenFaq(openFaq === i ? null : i)
 
-  return (
+  const landingContent = (
     <div className="min-h-screen overflow-x-hidden" style={{ fontFamily: "'Inter', sans-serif" }}>
 
       {/* ── STICKY NAV ─────────────────────────────────────────── */}
@@ -765,7 +773,8 @@ export default function App() {
             {copy.services.items.map((svc, i) => (
               <RevealDiv key={i} delay={i * 50}>
                 <div
-                  className="service-card bg-white rounded-2xl p-4 sm:p-5 cursor-pointer h-full flex flex-col"
+                  onClick={() => handleServiceClick(i)}
+                  className="service-card bg-white rounded-2xl p-4 sm:p-5 cursor-pointer h-full flex flex-col transition-all hover:shadow-lg hover:scale-105"
                   style={{ border: '1px solid #d4e4d8', boxShadow: '0 2px 12px rgba(26,92,56,0.06)' }}
                 >
                   <div
@@ -1472,5 +1481,12 @@ export default function App() {
         </div>
       )}
     </div>
+  )
+
+  return (
+    <Routes>
+      <Route path="/" element={landingContent} />
+      <Route path="/service/:id" element={<ServiceDetail lang={lang} />} />
+    </Routes>
   )
 }
